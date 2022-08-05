@@ -97,6 +97,8 @@ func main() {
 	fmt.Println("Interval: ", intervalEnv)   // print user defined env value
 	fmt.Println("Gopher Type: ", gopherType) // print default env value
 	fmt.Println("Species: ", *species)       // print default env value
+	
+	env.Usage() // print the usage
 }
 ```
 
