@@ -86,6 +86,20 @@ func init() {
 	env.Var(&intervalEnv, "delta_t", "comma-separated list of intervals to use between events")
 }
 
+type Config struct {
+	Host string
+	Port string
+	// ....
+}
+
+func init() {
+	cfg := new(Config)
+	// Tie the environ to the struct fields and
+	// set a usage messages.
+	env.StringVar(&cfg.Host, "host", "localhost", "App host name")
+	env.StringVar(&cfg.Port, "port", "443", "App port")
+}
+
 func main() {
 	os.Setenv("DELTA_T", "1s,2m,3h")
 
